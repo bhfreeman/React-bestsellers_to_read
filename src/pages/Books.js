@@ -1,33 +1,22 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API";
+import { Grid, Paper, Typography } from "@material-ui/core";
 
-function Books({lists}) {
+import QueryBooks from "../components/QueryBooks";
+import MyBookList from "../components/MyBookList";
 
-    const [queryList, setqueryList] = useState('query list')
-    const [books, setBooks] = useState([])
-    async function handleSubmit() {
-        const queryBooks = await API.getBooks(queryList)
-        setBooks(queryBooks.data.results)
-    }
-
+function Books({ lists, myBooks, setMyBooks }) {
   return (
-    <div>
-      <h1>hello, query selected is {queryList}</h1>
-      {/* {lists.map((item) => {
-        <p> {item} </p>;
-      })} */}
-
-      <select onChange={e => setqueryList(e.target.value)}>
-          <option>Select List</option>
-        {lists.map((item) => {
-         return <option value={item.list_name_encoded}>{item.list_name}</option>;
-        })}
-      </select>
-      <button onClick={handleSubmit}>Get Books</button>
-      {books.map((item) => {
-          return <p>{item.book_details[0].title}</p>
-      })}
-    </div>
+    <Grid container justify="center" alignItems="flex-start" spacing={2}>
+        <Grid item xs={12}>
+            <Typography variant="h1" align="center">NYT Best Sellers to Read</Typography>
+        </Grid>
+      <Grid item xs={6}>
+        <QueryBooks lists={lists} setMyBooks={setMyBooks} myBooks={myBooks} />
+      </Grid>
+      <Grid item xs={6}>
+        <MyBookList myBooks={myBooks} setMyBooks={setMyBooks} />
+      </Grid>
+    </Grid>
   );
 }
 

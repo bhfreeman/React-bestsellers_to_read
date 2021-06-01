@@ -14,10 +14,12 @@ import Books from "./pages/Books";
 export default function App() {
   const [loginInfo, setLoginInfo] = useState({
     username: loginPlaceholder.userName,
-    password: loginPlaceholder.password
+    password: loginPlaceholder.password,
   });
 
-  const [lists, setLists] = useLocalState([],'bookLists')
+  const [lists, setLists] = useLocalState([], "bookLists");
+  const [myBooks, setMyBooks] = useLocalState([], "myBooks");
+
   async function getList() {
     const bookLists = await API.getLists();
     setLists(bookLists.data.results);
@@ -26,17 +28,15 @@ export default function App() {
   useEffect(() => {
     if (lists.length > 0) return;
     else {
-      console.log("testing")
-      getList(); }
+      console.log("testing");
+      getList();
+    }
   });
 
   return (
     <div className="App">
       <Router>
         <div>
-          {/* {lists.map((item) => {
-           return <p>{item.list_name}</p>
-          })} */}
           <Switch>
             <Route exact path="/">
               <Login
@@ -45,7 +45,7 @@ export default function App() {
               />
             </Route>
             <Route exact path="/books">
-              <Books lists={lists} />
+              <Books lists={lists} myBooks={myBooks} setMyBooks={setMyBooks} />
             </Route>
           </Switch>
         </div>
