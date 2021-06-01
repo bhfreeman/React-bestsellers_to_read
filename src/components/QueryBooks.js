@@ -35,7 +35,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(3)
   },
   root: {
+    marginTop: theme.spacing(5),
     maxHeight: '600px',
+    minHeight: '600px',
     overflow: 'auto'
   }
 }));

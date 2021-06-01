@@ -15,6 +15,7 @@ import {
   Container,
 } from "@material-ui/core";
 
+//Material UI styling
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -35,10 +36,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+//Page
 export default function SignIn({ password, username }) {
   const classes = useStyles();
   const history = useHistory();
 
+  //Page functionality
+  //Clicking on login button
   function handleLogin() {
     // If connected to a real back-end check password against encrypted stored password
     // For purposes of this, just redirect to app main page
