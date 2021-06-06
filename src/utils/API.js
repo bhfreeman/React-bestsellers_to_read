@@ -1,7 +1,7 @@
 import axios from "axios";
 import apiKey from './apiKey'
 
-const key = 'idGhfFgU1rMo95REQtv3AqSQQtiy5Zn5';
+const key = 'PUT KEY HERE';
 
 export default {
   getLists: function () {
