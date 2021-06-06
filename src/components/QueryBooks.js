@@ -64,7 +64,7 @@ function QueryBooks({ lists, setMyBooks, myBooks }) {
     <Grid container spacing={1} align="center">
       <Grid item xs={12} className={classes.header}>
         <Typography variant="h3" align="center">
-          Search by Book Category
+          Search by Category
         </Typography>
       </Grid>
       {/* Select input to get list to use to query api */}

@@ -27,7 +27,7 @@ function MyBookList({ myBooks, setMyBooks }) {
       <Grid container spacing={1} align="center">
         <Grid item xs={12} className={classes.header}>
           <Typography variant="h3" align="center">
-            Books to Read
+            My Books
           </Typography>
         </Grid>
         <Grid item xs={12}>
