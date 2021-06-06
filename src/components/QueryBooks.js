@@ -38,7 +38,17 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     maxHeight: '600px',
     minHeight: '600px',
-    overflow: 'auto'
+    maxWidth: '475px',
+    overflow: 'auto',
+    backgroundColor: '#59647E',
+    borderRadius: '10px'
+  },
+  headerText: {
+    // backgroundColor: '#FFF9EE',
+    color: '#FFF9EE',
+    fontWeight: 'bolder',
+    borderRadius: '2px',
+    maxWidth: '250px'
   }
 }));
 
@@ -59,11 +69,11 @@ function QueryBooks({ lists, setMyBooks, myBooks }) {
   }
 
   return (
-    <Paper elevation={3} className={classes.root}>
+    <Paper elevation={1} className={classes.root}>
 
     <Grid container spacing={1} align="center">
       <Grid item xs={12} className={classes.header}>
-        <Typography variant="h3" align="center">
+        <Typography variant="h3" align="center" className={classes.headerText}>
           Search by Category
         </Typography>
       </Grid>
@@ -101,7 +111,7 @@ function QueryBooks({ lists, setMyBooks, myBooks }) {
       <Grid item xs={12} className={classes.header}>
         {/* If there is a list selected display this header with listname  */}
         {queryList && (
-          <Typography variant="h4">
+          <Typography variant="h4" className={classes.headerText}>
             Best Sellers from the {queryList.regName} category
           </Typography>
         )}

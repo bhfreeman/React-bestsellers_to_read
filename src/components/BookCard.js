@@ -8,7 +8,10 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 275,
     maxWidth: 450,
     marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1)
+    marginBottom: theme.spacing(1),
+    backgroundColor: '#FFF9EE',
+    borderRadius: '10px'
+    // backgroundColor: '#F2EDDC'
   },
   bullet: {
     display: 'inline-block',

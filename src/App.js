@@ -1,6 +1,7 @@
 // Dependencies
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
 
 //Utilities
 import useLocalState from "./utils/localState";
@@ -11,7 +12,15 @@ import API from "./utils/API";
 import Login from "./pages/Login";
 import Books from "./pages/Books";
 
+const useStyles = makeStyles((theme) => ({
+  app: {
+    background: '#F2F2F2',
+  },
+}));
+
 export default function App() {
+  const classes = useStyles();
+
   const [loginInfo, setLoginInfo] = useState({
     username: loginPlaceholder.userName,
     password: loginPlaceholder.password,
@@ -34,7 +43,7 @@ export default function App() {
   });
 
   return (
-    <div className="App">
+    <div className='App'>
       <Router>
         <div>
           <Switch>

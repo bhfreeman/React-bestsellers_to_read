@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     //   marginBottom: theme.spacing(5)
   },
+  // querybooks: {
+  //   background: '#626063'
+  // }
 }));
 
 function Books({ lists, myBooks, setMyBooks }) {
@@ -29,11 +32,13 @@ function Books({ lists, myBooks, setMyBooks }) {
           NYT Best Sellers to Read
         </Typography>
       </Grid> */}
+      <Grid item container align="center">
       <Grid item xs={12} sm={6}>
         <QueryBooks lists={lists} setMyBooks={setMyBooks} myBooks={myBooks} />
       </Grid>
       <Grid item xs={12} sm={6}>
         <MyBookList myBooks={myBooks} setMyBooks={setMyBooks} />
+      </Grid>
       </Grid>
     </Grid>
   );

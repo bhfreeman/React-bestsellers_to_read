@@ -8,13 +8,25 @@ import BookCard from "./BookCard";
 const useStyles = makeStyles((theme) => ({
   header:{
     marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3)
+    marginBottom: theme.spacing(3),
+    
   },
   root: {
     marginTop: theme.spacing(5),
     maxHeight: '600px',
     minHeight: '600px',
-    overflow: 'auto'
+    maxWidth: '475px',
+    overflow: 'auto',
+    backgroundColor: '#59647E',
+    borderRadius: '10px'
+    // backgroundColor: '#F2EDDC',
+  },
+  headerText: {
+    // backgroundColor: '#FFF9EE',
+    color: '#FFF9EE',
+    fontWeight: 'bolder',
+    borderRadius: '2px',
+    maxWidth: '250px'
   }
 }));
 
@@ -23,10 +35,10 @@ function MyBookList({ myBooks, setMyBooks }) {
 
   const classes = useStyles();
   return (
-    <Paper elevation={3} className={classes.root}>
+    <Paper elevation={1} className={classes.root}>
       <Grid container spacing={1} align="center">
         <Grid item xs={12} className={classes.header}>
-          <Typography variant="h3" align="center">
+          <Typography variant="h3" align="center" className={classes.headerText}>
             My Books
           </Typography>
         </Grid>
