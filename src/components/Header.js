@@ -11,7 +11,11 @@ const useStyles = makeStyles((theme) => ({
     },
     subTextBox: {
         maxWidth: '300px'
-    }
+    },
+    header: {
+      marginTop: theme.spacing(5),
+      //   marginBottom: theme.spacing(5)
+    },
   }));
 
 function Header() {
@@ -20,6 +24,7 @@ function Header() {
     <Grid
      container
      justify="center"
+     className={classes.header}
      >
         <Grid item >
           <img src="/images/bookListLogo.png" alt="book list logo" />

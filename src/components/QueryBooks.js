@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '475px',
     overflow: 'auto',
     backgroundColor: '#59647E',
-    borderRadius: '10px'
+    borderRadius: '10px 0px 0px 10px'
   },
   headerText: {
     // backgroundColor: '#FFF9EE',
@@ -65,6 +65,7 @@ function QueryBooks({ lists, setMyBooks, myBooks }) {
   //Function to get books based on currently selected list
   async function handleSubmit() {
     const queryBooks = await API.getBooks(queryList.queryName);
+    console.log(queryBooks.data.results)
     setBooks(queryBooks.data.results);
   }
 
@@ -111,7 +112,7 @@ function QueryBooks({ lists, setMyBooks, myBooks }) {
       <Grid item xs={12} className={classes.header}>
         {/* If there is a list selected display this header with listname  */}
         {queryList && (
-          <Typography variant="h4" className={classes.headerText}>
+          <Typography variant="h6" className={classes.headerText}>
             Best Sellers from the {queryList.regName} category
           </Typography>
         )}

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '475px',
     overflow: 'auto',
     backgroundColor: '#59647E',
-    borderRadius: '10px'
+    borderRadius: '0px 10px 10px 0px'
     // backgroundColor: '#F2EDDC',
   },
   headerText: {
